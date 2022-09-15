@@ -1,5 +1,4 @@
-//https://developers.arcgis.com/arcade/function-reference/geometry_functions/#contains2
-
+//A calculate field expression to sum a numeric attribute from a FeatureSet derived from CONTAINS() to a new field
 var insideGeometry = FEATURESETBYNAME($datastore, "FeatureClassName")
 var containerGeometry = $feature
 var features_within_container = CONTAINS(containerGeometry, insideGeometry)
