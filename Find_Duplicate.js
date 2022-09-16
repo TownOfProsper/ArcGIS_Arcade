@@ -4,8 +4,8 @@ var features = FEATURESETBYNAME($datastore, "Featureclass Name Here")
 // the @ is used to reference the variable in a way that is SQL-compliant
 var sqlExpression = "A_FIELD_NAME_HERE = @search_duplicate"
 var result = FILTER(features, sqlExpression)
-
+// this is an implicit return, probably not best practice
 WHEN(
-    COUNT(result) > 1, "Duplicate Value",
+    COUNT(result) > 1, `Duplicate Value, frequency ${COUNT(result)}`,
     "Unique"
 )
